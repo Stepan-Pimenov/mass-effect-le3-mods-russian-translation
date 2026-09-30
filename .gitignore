@@ -21,3 +21,6 @@
 # Python
 __pycache__/
 *.pyc
+
+# Архивы релиза (собираются tools/mkrelease.py)
+/release/
