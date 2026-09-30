@@ -13,7 +13,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import parafill as P
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 
 ROOT = os.path.dirname(HERE)
 TR = os.path.join(ROOT, 'translation')
@@ -33,7 +33,7 @@ def pending(stem):
         if f.startswith(stem + '.') and f.endswith('.json') and f != stem + '.para.json':
             done |= set(json.load(open(os.path.join(TR, f), encoding='utf-8')))
     ids = [k for k, v in en.items()
-           if k not in done and v.strip() and ru.get(k, v) == v and not is_skip(v) and len(v) >= 60]
+           if k not in done and v.strip() and not has_russian(ru.get(k), v) and not is_skip(v) and len(v) >= 60]
     return en, sorted(ids, key=int)
 
 

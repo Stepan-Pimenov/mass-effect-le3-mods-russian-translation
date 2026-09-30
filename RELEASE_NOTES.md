@@ -8,8 +8,8 @@
 |---|---|---|---:|
 | `EGM` | Expanded Galaxy Mod + Squadmate Pack | 1.0.6 | 2 841 |
 | `ProjectVariety` | Project Variety (+ `DLC_Shared`) | 0.7 | 2 974 |
-| `Spectre` | Spectre Expansion Mod | 1.2.1 | 915 |
-| `CommunityPatch` | LE3 Community Patch | 1.7.9 | 98 |
+| `Spectre` | Spectre Expansion Mod | 1.2.1 | 919 |
+| `CommunityPatch` | LE3 Community Patch | 1.7.9 | 169 |
 | `AppearanceModMenu` | Appearance Modification Menu | 2.2 | 161 |
 | `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
 | `Hairstyles` | More Hair for Femshep 1.1, Morning's Hairstyles 1.4.4 / PT2 1.3.1 / PT3 1.3.3, Morning's Versatile 1.0.3 | — | 137 |

@@ -3,7 +3,7 @@ python dump.py <stem> [--min N] [--max N] [--skip N] [--limit N]
 """
 import os, sys, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -28,7 +28,7 @@ for f in sorted(os.listdir(TR)):
         done.update(json.load(open(os.path.join(TR, f), encoding='utf-8')))
 
 todo = [(k, v) for k, v in en.items()
-        if v.strip() and ru.get(k, v) == v and k not in done
+        if v.strip() and not has_russian(ru.get(k), v) and k not in done
         and not is_skip(v)
         and mn <= len(v) <= mx]
 todo.sort(key=lambda x: len(x[1]))

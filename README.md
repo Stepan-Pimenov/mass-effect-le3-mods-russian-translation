@@ -26,8 +26,8 @@
 |---|---|---|---:|
 | `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squadmate Pack | 1.0.6 | 2 841 |
 | `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ общий файл `DLC_Shared`) | 0.7 | 2 974 |
-| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 915 |
-| `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 98 |
+| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 919 |
+| `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 169 |
 | `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 2.2 | 161 |
 | `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
 | `Hairstyles` | Набор модов на причёски Шепард (5 штук, список ниже) | — | 137 |
@@ -43,6 +43,8 @@
 | Morning's Hairstyles for FemShep LE3 PT2 | 1.3.1 |
 | Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
 | Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
+
+**Стиль.** Текст выдержан под официальную локализацию трилогии: буква «ё» не используется, Commander Shepard — «капитан Шепард», имена и названия сверены с игрой. В текстах интерфейса, журнала заданий и кодекса нет обращений к игроку по полу, поэтому они одинаково читаются и за мужского, и за женского Шепард.
 
 **Намеренно оставлено по-английски:** названия самих модов, титры с именами авторов и названия песен в плеере.
 
@@ -94,12 +96,12 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 
 | Файл | Кладётся в | Размер | Строк |
 |---|---|---:|---:|
-| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 394 КБ | 2 840 |
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 392 КБ | 2 840 |
 | `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 КБ | 1 |
-| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 336 КБ | 1 624 |
+| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 КБ | 1 624 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 КБ | 1 350 |
-| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 368 КБ | 915 |
-| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 КБ | 98 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 360 КБ | 919 |
+| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 КБ | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 КБ | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 КБ | 53 |
 | 5 файлов причёсок | соответствующие папки модов | < 4 КБ | 137 |

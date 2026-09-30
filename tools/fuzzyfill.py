@@ -5,7 +5,7 @@ from collections import defaultdict
 sys.stdout.reconfigure(encoding='utf-8')
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(BASE, 'tools'))
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 
 ref = json.load(open(os.path.join(BASE, 'reference/vanilla_en_ru.json'), encoding='utf-8'))
 for extra in ('reference/dlc_en_ru.json', 'reference/dlc2_en_ru.json', 'reference/le1_en_ru.json', 'reference/le2_en_ru.json'):
@@ -66,7 +66,7 @@ def main():
         out = {}
         for sid, en in ens.items():
             if sid in done or not en.strip(): continue
-            if rux.get(sid, en) != en: continue
+            if has_russian(rux.get(sid), en): continue
             if len(en) < a.minlen or is_skip(en): continue
             res = find(en, a.min)
             if res:

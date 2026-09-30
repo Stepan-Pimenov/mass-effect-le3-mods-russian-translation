@@ -5,7 +5,7 @@ import os, sys, json, re, unicodedata
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(ROOT, 'source')
 TR = os.path.join(ROOT, 'translation')
@@ -44,7 +44,7 @@ for stem in stems:
     out = {}
     for k, v in en.items():
         if k in done or not v.strip(): continue
-        if ru.get(k, v) != v or is_skip(v): continue
+        if has_russian(ru.get(k), v) or is_skip(v): continue
         cand = by_text.get(norm(v))
         if cand and norm(cand) != norm(v):
             out[k] = cand

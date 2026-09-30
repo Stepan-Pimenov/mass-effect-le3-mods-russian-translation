@@ -27,3 +27,15 @@ def skip(text: str) -> bool:
     if len(t) <= 14 and ' ' not in t and re.search(r'\d', t) and re.fullmatch(r'[A-Za-z0-9\-/]+', t):
         return True
     return False
+
+
+_CYR = re.compile(r'[А-яЁё]')
+
+
+def has_russian(existing, english) -> bool:
+    """Есть ли у мода собственный русский перевод этой строки.
+
+    Некоторые моды держат в своём RUS.tlk не перевод, а устаревшую английскую
+    версию строки, поэтому одного отличия от английского мало.
+    """
+    return bool(existing) and existing != english and bool(_CYR.search(existing))

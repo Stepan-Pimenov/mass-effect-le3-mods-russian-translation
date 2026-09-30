@@ -7,7 +7,7 @@ from collections import defaultdict
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 ROOT = os.path.dirname(HERE)
 
 ref = {}
@@ -113,7 +113,7 @@ def main():
         for sid, en in ens.items():
             if sid in done or not en.strip():
                 continue
-            if rux.get(sid, en) != en or is_skip(en) or len(en) < a.minlen:
+            if has_russian(rux.get(sid), en) or is_skip(en) or len(en) < a.minlen:
                 continue
             res = find(en, a.min)
             if not res:

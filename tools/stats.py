@@ -1,7 +1,9 @@
-import os, sys, json
+import os, sys, json, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import skip as is_skip
 from collections import Counter
+
+CYR = re.compile(r'[А-яЁё]')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -20,8 +22,14 @@ for f in sorted(os.listdir(SRC)):
     for g in sorted(os.listdir(TR)):
         if g.startswith(stem + '.') and g.endswith('.json'):
             done.update(json.load(open(os.path.join(TR, g), encoding='utf-8')))
+    # ru_existing иногда содержит не русский текст, а старую английскую версию
+    # строки: такую подстановку переводом не считаем.
+    def has_ru(k, v):
+        t = ru.get(k)
+        return bool(t) and t != v and CYR.search(t)
+
     todo = {k: v for k, v in en.items()
-            if v.strip() and ru.get(k, v) == v and k not in done and not is_skip(v)}
+            if v.strip() and not has_ru(k, v) and k not in done and not is_skip(v)}
     if todo:
         per_file[stem] = todo
         for v in todo.values():

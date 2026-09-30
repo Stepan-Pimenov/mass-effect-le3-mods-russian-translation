@@ -10,7 +10,7 @@ import os, sys, json, re, unicodedata
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from common import skip as is_skip
+from common import skip as is_skip, has_russian
 ROOT = os.path.dirname(HERE)
 
 REFS = ['vanilla_en_ru.json', 'dlc_en_ru.json', 'dlc2_en_ru.json',
@@ -157,7 +157,7 @@ def main():
                 done |= set(json.load(open(os.path.join(TR, f), encoding='utf-8')))
         out = {}
         for k, v in en.items():
-            if k in done or not v.strip() or ru.get(k, v) != v or is_skip(v):
+            if k in done or not v.strip() or has_russian(ru.get(k), v) or is_skip(v):
                 continue
             if len(v) < 60:
                 continue

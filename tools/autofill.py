@@ -5,6 +5,7 @@
 import os, sys, json, re, unicodedata
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+from common import has_russian
 from tlk import read_tlk
 
 ROOT = os.path.dirname(HERE)
@@ -47,7 +48,7 @@ for stem in stems:
     d = json.load(open(p, encoding='utf-8'))
     en, ru = d['en'], d['ru_existing']
     todo = {k: v for k, v in en.items()
-            if v.strip() and ru.get(k, v) == v and v.strip() not in ('Male', 'Female', 'en-us')}
+            if v.strip() and not has_russian(ru.get(k), v) and v.strip() not in ('Male', 'Female', 'en-us')}
     auto = {}
     for k, v in todo.items():
         sid = int(k)

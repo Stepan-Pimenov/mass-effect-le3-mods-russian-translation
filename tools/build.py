@@ -2,7 +2,7 @@
 Запуск:  python build.py [stem ...]   (без аргументов — все, для которых есть перевод)
 Установка в игру:  python build.py --install [stem ...]
 """
-import os, sys, json, shutil
+import os, sys, json, shutil, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from tlk import read_tlk
@@ -21,6 +21,15 @@ if not DLC and os.environ.get('ME3LE_PATH'):
     DLC = os.path.join(os.environ['ME3LE_PATH'], 'Game', 'ME3', 'BioGame', 'DLC')
 if not DLC:
     DLC = r"D:\SteamLibrary\steamapps\common\Mass Effect Legendary Edition\Game\ME3\BioGame\DLC"
+
+CYR = re.compile(r'[А-яЁё]')
+
+
+def has_russian(existing, english):
+    """Свой перевод мода берём только если это действительно русский текст:
+    некоторые моды держат в RUS.tlk устаревшую английскую версию строки."""
+    return bool(existing) and existing != english and bool(CYR.search(existing))
+
 
 os.makedirs(BUILD, exist_ok=True)
 os.makedirs(BACKUP, exist_ok=True)
@@ -65,9 +74,9 @@ for stem in stems:
         key = str(sid)
         if key in tr:
             text = tr[key]; used += 1
-        elif str(sid) in ru_existing and ru_existing[str(sid)] != s['text']:
-            text = ru_existing[str(sid)]
-        elif sid in ru_existing and ru_existing[sid] != s['text']:
+        elif has_russian(ru_existing.get(key), s['text']):
+            text = ru_existing[key]
+        elif has_russian(ru_existing.get(sid), s['text']):
             text = ru_existing[sid]
         else:
             text = s['text']
