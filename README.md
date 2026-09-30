@@ -110,7 +110,7 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 |---|---|
 | Mass Effect Legendary Edition | `MassEffect3.exe` 2.0.0.0 (последний патч) |
 | Уровень совместимости модов (`_metacmm.txt`) | 137 |
-| Windows | 11 Pro 24H2 |
+| Windows | 11 Pro 25H2 (сборка 26200) |
 
 **Требования:**
 

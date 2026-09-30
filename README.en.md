@@ -110,7 +110,7 @@ Without parameters `install.ps1` runs interactively. `-English` switches the out
 |---|---|
 | Mass Effect Legendary Edition | `MassEffect3.exe` 2.0.0.0 (latest patch) |
 | Mod feature level (`_metacmm.txt`) | 137 |
-| Windows | 11 Pro 24H2 |
+| Windows | 11 Pro 25H2 (build 26200) |
 
 **Requirements:**
 

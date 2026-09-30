@@ -30,7 +30,7 @@
 
 ### Проверено
 
-`MassEffect3.exe` 2.0.0.0, уровень совместимости модов 137, Windows 11 24H2. Для установщика нужен .NET Framework 4.x (входит в Windows 10/11), права администратора не требуются, если игра лежит не в `Program Files`.
+`MassEffect3.exe` 2.0.0.0, уровень совместимости модов 137, Windows 11 25H2. Для установщика нужен .NET Framework 4.x (входит в Windows 10/11), права администратора не требуются, если игра лежит не в `Program Files`.
 
 ### Известные ограничения
 
@@ -46,4 +46,4 @@ Covers Expanded Galaxy Mod 1.0.6, Project Variety 0.7, Spectre Expansion Mod 1.2
 
 **Install:** download `ME3LE-Russian-Mods-v1.0-full.zip`, extract, run `ME3LE-Русификатор-модов.exe` (the window has an English switch), tick the components. Uninstall from the same window. Apply after all other mods; reinstalling a mod through a mod manager restores its English text, so just run the installer again.
 
-Tested on `MassEffect3.exe` 2.0.0.0, mod feature level 137, Windows 11 24H2. The installer needs .NET Framework 4.x (bundled with Windows 10/11).
+Tested on `MassEffect3.exe` 2.0.0.0, mod feature level 137, Windows 11 25H2. The installer needs .NET Framework 4.x (bundled with Windows 10/11).
