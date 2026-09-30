@@ -4,83 +4,140 @@ A Russian translation of the text that popular ME3 Legendary Edition mods add to
 
 > **Русская версия: [README.md](README.md)**
 
-The translation matches the official Russian localisation of the trilogy. Every term was checked against the shipped Russian text (Reapers, the Crucible, C-Sec, STG, medi-gel, planet names, weapon and armour names), and proper nouns were taken from the official LE1, LE2, LE3 and DLC translations rather than transliterated by ear.
+The translation matches the official Russian localisation of the trilogy. Every term was checked against the shipped Russian text (Reapers, the Crucible, C-Sec, STG, medi-gel, planet, weapon and armour names), and proper nouns were taken from the official LE1, LE2, LE3 and DLC translations rather than transliterated by ear.
+
+---
+
+## Contents
+
+* [What is translated](#what-is-translated)
+* [Installation](#installation)
+* [Technical details](#technical-details)
+* [Compatibility](#compatibility)
+* [How it was made](#how-it-was-made)
+* [Feedback](#feedback)
+* [Licence](#licence)
 
 ---
 
 ## What is translated
 
-| Component | Mod | Strings |
-|---|---|---:|
-| **EGM** | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squad Pack | 2,841 |
-| **ProjectVariety** | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ shared file) | 2,974 |
-| **Spectre** | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 915 |
-| **CommunityPatch** | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 98 |
-| **AppearanceModMenu** | [Appearance Mod Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 161 |
-| **ApartmentAdditions** | Apartment Additions | 53 |
-| **Hairstyles** | Shepard hairstyle mod bundle | 137 |
+| Component | Mod | Mod version | Strings |
+|---|---|---|---:|
+| `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squadmate Pack | 1.0.6 | 2,841 |
+| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ the shared `DLC_Shared` file) | 0.7 | 2,974 |
+| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 915 |
+| `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 98 |
+| `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 2.2 | 161 |
+| `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
+| `Hairstyles` | Shepard hairstyle mods (five of them, listed below) | — | 137 |
 
 Roughly **7,200 strings, about 1.4 million characters**: codex entries, battle reports, terminal e-mails, descriptions of weapons, armour, vehicles and squadmates, every mod settings screen, the Cerberus Daily News feed, and hairstyle and outfit names.
 
+The `Hairstyles` component covers five mods:
+
+| Mod | Version |
+|---|---|
+| More Hair for Femshep (ME3LE) | 1.1 |
+| Morning's Hairstyles for FemShep LE3 | 1.4.4 |
+| Morning's Hairstyles for FemShep LE3 PT2 | 1.3.1 |
+| Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
+| Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
+
 **Deliberately left in English:** the mod names themselves, credits with author names, and song titles in the music player.
 
-**Not touched:** vanilla game text, audio and textures.
+**Not touched:** vanilla game text, audio, textures, models, scripts.
 
 ---
 
 ## Installation
 
-### Option 1: the installer (easiest)
+### Option 1 — the GUI installer (recommended)
 
-1. Download the archive from [Releases](../../releases) and extract it anywhere.
-2. Run **`Install.bat`**.
-3. The installer finds the game, lists the components and installs the ones you pick.
+1. Download `ME3LE-Russian-Mods-<version>-full.zip` from the [releases page](../../releases) and extract it anywhere.
+2. Run **`ME3LE-Русификатор-модов.exe`** (the interface has a Russian/English switch in the top-right corner).
+3. The program locates the game, lists the components as checkboxes and installs only the ticked ones. The same window has an uninstall button.
 
-Components whose mod is not installed never show up in the list, so nothing unnecessary gets copied.
+Components whose mod is not installed are marked unavailable, so nothing unnecessary gets copied. Administrator rights are not required unless the game sits in `Program Files`.
 
-To install specific components without any prompts:
+A `*_RUS.tlk.bak` backup is made before each file is replaced; the **Uninstall** button restores from it.
 
-```powershell
-powershell -ExecutionPolicy Bypass -File install.ps1 -Components EGM,Spectre -Silent -English
-```
+### Option 2 — manual copy
 
-If the game lives somewhere unusual, point the installer at it:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File install.ps1 -GamePath "D:\Games\Mass Effect Legendary Edition" -English
-```
-
-### Option 2: manual copy
-
-`dist/<Component>/` already mirrors the game's folder layout. Copy the contents of the component you want into
+The archive contains a `dist/` folder that already mirrors the game's layout. Copy the contents of the component you want, overwriting, into
 
 ```
 …\Mass Effect Legendary Edition\Game\ME3\BioGame\DLC\
 ```
 
-and overwrite. For EGM, for example, `DLC_MOD_EGM_RUS.tlk` has to end up in
-`DLC\DLC_MOD_EGM\CookedPCConsole\`.
+For EGM, for example, `DLC_MOD_EGM_RUS.tlk` has to end up in `DLC\DLC_MOD_EGM\CookedPCConsole\`.
 
-### Uninstalling
+Per-component archives named `ME3LE-Russian-EGM-<version>.zip` are also attached to each release; their contents go straight into the `DLC` folder.
 
-Run **`Uninstall.bat`** — it restores the `*_RUS.tlk.bak` backups the installer made before overwriting anything. You can also just delete the `*_RUS.tlk` files by hand, but then the mod will fall back to English text.
+### Option 3 — command line
 
----
+A PowerShell version of the installer is included for scripted setups:
 
-## Requirements
+```powershell
+powershell -ExecutionPolicy Bypass -File install.ps1 -Components EGM,Spectre -Silent -English
+powershell -ExecutionPolicy Bypass -File install.ps1 -GamePath "D:\Games\Mass Effect Legendary Edition" -English
+powershell -ExecutionPolicy Bypass -File uninstall.ps1 -English
+```
 
-* Mass Effect Legendary Edition, the **ME3** part
-* The mods you want translated, already installed
-* The game language set to **Russian**
-* Windows PowerShell 5.1 (ships with every Windows 10/11) — for the installer only
-
-The translation does not depend on any modding-tool version: it simply replaces a text file. If a mod author ships a major update with new strings, those strings stay English until the translation is updated.
+Without parameters `install.ps1` runs interactively. `-English` switches the output language.
 
 ---
 
-## Order relative to your mod manager
+## Technical details
 
-Install this **after** all your mods are in place (after ME3Tweaks Mod Manager, ALOT and so on). If you later reinstall a mod through the manager it will put its own English `_RUS.tlk` back — just run the installer again.
+**What actually changes.** The translation consists entirely of replacing `<DLCName>_RUS.tlk` files — the containers holding every mod string for the Russian locale. Nothing else is added or removed. `PCConsoleTOC.bin` is left alone, since `.tlk` sizes are not tracked there.
+
+| File | Goes into | Size | Strings |
+|---|---|---:|---:|
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 394 KB | 2,840 |
+| `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 KB | 1 |
+| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 336 KB | 1,624 |
+| `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 KB | 1,350 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 368 KB | 915 |
+| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 KB | 98 |
+| `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 KB | 161 |
+| `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 KB | 53 |
+| 5 hairstyle files | the corresponding mod folders | < 4 KB | 137 |
+
+**Tested against:**
+
+| Component | Version |
+|---|---|
+| Mass Effect Legendary Edition | `MassEffect3.exe` 2.0.0.0 (latest patch) |
+| Mod feature level (`_metacmm.txt`) | 137 |
+| Windows | 11 Pro 24H2 |
+
+**Requirements:**
+
+| For | What is needed |
+|---|---|
+| The GUI installer | Windows 7 or newer, .NET Framework 4.x (bundled with Windows 10/11) |
+| `install.ps1` / `uninstall.ps1` | Windows PowerShell 5.1 (bundled with Windows 10/11) |
+| Rebuilding the translation (`tools/`) | Python 3.8+ (developed on 3.12) |
+| Rebuilding the installer | `csc.exe` shipped with Windows, nothing to install |
+
+The translation itself is just text files — the game needs no dependencies for it.
+
+---
+
+## Compatibility
+
+**Install order.** Apply the translation **last**, once every mod is in place (after ME3Tweaks Mod Manager, ALOT, ALOV and so on). Reinstalling a mod through a mod manager restores its own English `_RUS.tlk`, so the installer has to be run again.
+
+**Texture mods** (ALOT, ALOV, A Lot of Videos) do not conflict: the translation contains no textures and touches no `.pcc` files. Order relative to them does not matter.
+
+**Other localisations.** The vanilla `BIOGame_RUS.tlk` is untouched, so this works alongside any edits to the base game's text.
+
+**Mod versions.** The translation was built against the versions listed above. It installs fine on newer mod versions, but strings added after the build stay English — unknown string ids are simply left alone and nothing breaks. If a mod renumbers its strings (rare, and usually only during major reworks), some text may land in the wrong place; in that case use **Uninstall** and open an issue.
+
+**Saves** are unaffected: only text changes. The translation can be added or removed at any point, including mid-playthrough.
+
+**Multiplayer** is not touched.
 
 ---
 
@@ -93,18 +150,25 @@ Install this **after** all your mods are in place (after ME3Tweaks Mod Manager, 
 * automatic reuse of that official text by exact match, normalised match, fuzzy match, prefix match and paragraph match. Mods often take a vanilla codex entry and append their own paragraphs, so the vanilla part fills itself in and only the new text is translated by hand;
 * generators for repetitive settings strings, weapon names and planet data blocks.
 
-The translation itself lives in `translation/` as JSON files of the form `"string id": "Russian text"`. Edit them there and rebuild:
+The translation itself lives in `translation/` as JSON files of the form `"string id": "Russian text"`. Edits go there, then the translation is rebuilt:
 
 ```bash
 python tools/build.py            # build .tlk files into build/
 python tools/build.py --install  # build and copy straight into the game
+python tools/mkrelease.py        # build the release archives
 ```
 
 The game path comes from the `ME3LE_PATH` (game root) or `ME3LE_DLC` environment variable; without them it falls back to the default at the top of `tools/build.py`.
 
 Build priority: text from `translation/` → the mod's existing Russian string → English.
 
-Two folders are intentionally absent from the repository: `source/` (dumped mod text) and `reference/` (the official translation extracted from the game itself), because both are someone else's intellectual property. You generate them locally from your own copy of the game:
+The installer is compiled from `tools/installer/Installer.cs` with the compiler shipped in Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\build_installer.ps1
+```
+
+Two folders are intentionally absent from the repository: `source/` (dumped mod text) and `reference/` (the official translation extracted from the game itself), because both are someone else's intellectual property. They are generated locally from your own copy of the game:
 
 ```bash
 python tools/dump.py             # dump the installed mods' text into source/
@@ -115,26 +179,26 @@ python tools/build_dlc_ref.py    # LE3 DLC
 
 ---
 
-## Found a mistake?
+## Feedback
 
-Open an [Issue](../../issues) with the mod, the text you saw (or a screenshot). Pull requests are welcome too: edit the relevant file in `translation/` and the translation rebuilds from it.
+Mistakes and typos can be reported in [Issues](../../issues) — please name the mod and quote the text (or attach a screenshot). Pull requests are welcome too: edit the relevant file in `translation/` and the translation rebuilds from it.
 
-The translation was produced without checking every line in-game, so some strings may still be too long for their UI slot or read awkwardly. Reports are appreciated.
+The translation was produced without checking every line in-game, so some strings may still be too long for their UI slot or read awkwardly.
 
 ---
 
 ## Licence
 
-The code (`tools/`, the installer) is MIT — help yourself.
+The code (`tools/`, the installer) is MIT.
 
-The translation (`translation/`, `dist/`) is a derivative work based on mod text: free for personal use, redistribution with attribution, no selling. If you are a mod author and would rather your mod's translation was not distributed, open an issue and it will be removed.
+The translation (`translation/`, `dist/`) is a derivative work based on mod text: free for personal use, redistribution with attribution, no selling. Mod authors may request removal of their mod's translation through Issues.
 
 Details in [LICENSE](LICENSE).
 
 ---
 
-## Rights and credits
+## Credits
 
-This is a derivative work based on mod text. All rights to the mods themselves belong to their authors; this repository contains only the translated text and the tooling — no mod or game content. If you are a mod author and would like the translation taken down or moved, just open an issue.
+Thanks to the authors of Expanded Galaxy Mod, Project Variety, Spectre Expansion Mod, LE3 Community Patch, Appearance Modification Menu and the rest, and to the ME3Tweaks team for Legendary Explorer, without which reverse-engineering the formats would have been far harder.
 
-Thanks to the authors of Expanded Galaxy Mod, Project Variety, Spectre Expansion Mod, LE3 Community Patch, Appearance Mod Menu and the rest, and to the ME3Tweaks team for Legendary Explorer, without which reverse-engineering the formats would have been far harder.
+This project is not affiliated with or endorsed by Electronic Arts, BioWare, or the mod authors.
