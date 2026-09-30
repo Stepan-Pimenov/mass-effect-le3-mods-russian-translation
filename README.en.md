@@ -123,6 +123,16 @@ The translation was produced without checking every line in-game, so some string
 
 ---
 
+## Licence
+
+The code (`tools/`, the installer) is MIT — help yourself.
+
+The translation (`translation/`, `dist/`) is a derivative work based on mod text: free for personal use, redistribution with attribution, no selling. If you are a mod author and would rather your mod's translation was not distributed, open an issue and it will be removed.
+
+Details in [LICENSE](LICENSE).
+
+---
+
 ## Rights and credits
 
 This is a derivative work based on mod text. All rights to the mods themselves belong to their authors; this repository contains only the translated text and the tooling — no mod or game content. If you are a mod author and would like the translation taken down or moved, just open an issue.

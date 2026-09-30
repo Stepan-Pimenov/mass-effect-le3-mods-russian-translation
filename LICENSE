@@ -1,0 +1,86 @@
+Этот репозиторий состоит из двух частей с разными условиями.
+This repository has two parts with different terms.
+
+
+================================================================================
+1. КОД / CODE  —  MIT License
+================================================================================
+
+Относится к: tools/, install.ps1, uninstall.ps1, *.bat
+Applies to: tools/, install.ps1, uninstall.ps1, *.bat
+
+MIT License
+
+Copyright (c) 2026 Stepan Pimenov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+================================================================================
+2. ПЕРЕВОД / TRANSLATION  —  производная работа / derivative work
+================================================================================
+
+Относится к: translation/, dist/
+Applies to: translation/, dist/
+
+--- Русский ---
+
+Перевод — производная работа от текстов модов Mass Effect 3 Legendary Edition.
+Права на сами моды принадлежат их авторам, права на игру и её официальную
+локализацию — Electronic Arts и BioWare. Ни содержимого модов, ни содержимого
+игры в этом репозитории нет: только переведённый текст и инструменты.
+
+Разрешается:
+  * пользоваться переводом в своей игре как угодно;
+  * изменять его и присылать правки;
+  * выкладывать перевод и сборки на его основе в других местах при условии
+    указания источника (ссылки на этот репозиторий).
+
+Не разрешается:
+  * продавать перевод или брать за него плату;
+  * выдавать его за свою работу.
+
+Если вы автор мода и не хотите, чтобы перевод вашего мода распространялся —
+напишите в Issues, и соответствующая часть будет удалена без обсуждений.
+
+Перевод не связан с Electronic Arts, BioWare и авторами модов и не одобрен ими.
+
+--- English ---
+
+This translation is a derivative work based on the text of Mass Effect 3
+Legendary Edition mods. The mods themselves belong to their authors; the game
+and its official localisation belong to Electronic Arts and BioWare. Neither
+mod content nor game content is included here — only the translated text and
+the tooling.
+
+You may:
+  * use the translation in your own game however you like;
+  * modify it and submit changes;
+  * redistribute it, or builds based on it, with attribution (a link to this
+    repository).
+
+You may not:
+  * sell the translation or charge for access to it;
+  * present it as your own work.
+
+If you are a mod author and do not want your mod's translation distributed,
+open an issue and that part will be removed, no questions asked.
+
+This project is not affiliated with or endorsed by Electronic Arts, BioWare,
+or the mod authors.
