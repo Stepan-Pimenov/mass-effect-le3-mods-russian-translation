@@ -6,11 +6,10 @@
 
 **Spectre Expansion Mod переведён полностью** — было 919 строк, стало 1 412. Мод хранил в своём русском файле не перевод, а устаревшую английскую редакцию строк, из-за чего почти 500 строк (описания планет и систем, задания, сводки, текстовые приключения) считались готовыми и оставались английскими. Теперь сборка принимает за перевод только текст, в котором действительно есть кириллица.
 
-**Выбор пола Шепард.** Письма и реплики, обращённые к Шепард, по-русски требуют рода, поэтому перевод собирается в двух вариантах. В окне установщика появился переключатель **Шепард: женский / мужской** (по умолчанию женский), у `install.ps1` — ключ `-Male`. Различаются 66 строк.
+**Выбор пола Шепард.** Письма и реплики, обращённые к Шепард, по-русски требуют рода, поэтому перевод собирается в двух вариантах. В окне установщика появился переключатель **Шепард: женский / мужской** (по умолчанию женский).
 
-**Стиль приведён к официальной локализации.** Убрана буква «ё» (в официальном переводе её нет), «коммандер» заменён на «капитан», выправлены имена: Хакет, Ариа, Гуэрта, «Синие светила», «Серый посредник». Исправлены слова со смешанной кириллицей и латиницей.
+**Стиль приведён к официальной локализации.** «Коммандер» заменён на «капитан», выправлены имена: Хакет, Ариа, Гуэрта, «Синие светила», «Серый посредник».
 
-**Безличные формулировки.** Интерфейс, окна настроек, журнал заданий и кодекс больше не обращаются к игроку на «ты» и по полу.
 
 **Перекрыт собственный русский Community Patch:** «Конрад Не Извиняется» → «Конрад не извиняется», «Вермайрский выживший» → «выживший на Вермайре», «Рональд Трейнор» → «Рональд Тейлор», три одинаковые подписи «Судьба Рональда Тейлора 1» → 1, 2 и 3.
 
@@ -28,7 +27,9 @@
 
 ### Установка
 
-Скачивается **`ME3LE-Russian-Mods-v1.1-full.zip`**, распаковывается в любую папку, запускается **`ME3LE-Русификатор-модов.exe`**. Программа сама находит игру, показывает компоненты с галочками и ставит только отмеченные; там же выбирается пол Шепард. Недоступными помечаются те компоненты, чей мод не установлен. Откат — кнопкой в том же окне.
+Ниже, в разделе **Assets**, нужно скачать один файл — **`ME3LE-Russian-Mods-v1.1-full.zip`** (тот, в имени которого есть `full`). Распаковать его в любую папку и запустить **`ME3LE-Русификатор-модов.exe`**. Программа сама находит игру и показывает список модов с галочками; там же выбирается пол Шепард. Остаётся нажать «Установить». Откат — кнопкой «Удалить перевод» в том же окне.
+
+Подробная пошаговая инструкция — в [README](https://github.com/Stepan-Pimenov/mass-effect-le3-mods-russian-translation#установка).
 
 Остальные архивы — отдельные компоненты для ручной установки: содержимое распаковывается в `…\Mass Effect Legendary Edition\Game\ME3\BioGame\DLC\` с заменой. Файлы с `.male.tlk` — вариант под мужского Шепарда: нужно скопировать такой файл и убрать из имени `.male`.
 
@@ -52,11 +53,10 @@ About **7,750 strings (~1.8M characters)**: codex entries, battle reports, termi
 
 **Spectre Expansion Mod is now fully translated** — 1,412 strings instead of 919. The mod keeps an outdated English revision of its strings in its own Russian file, so nearly 500 strings were counted as done and stayed English. The build now only accepts text that actually contains Cyrillic as a translation.
 
-**Male/female Shepard.** Lines addressed to Shepard need grammatical gender in Russian, so the translation ships in two variants. The installer has a **Shepard: female / male** switch (female by default); `install.ps1` takes `-Male`. 66 strings differ.
+**Male/female Shepard.** Lines addressed to Shepard need grammatical gender in Russian, so the translation ships in two variants. The installer has a **Shepard: female / male** switch (female by default); `install.ps1` takes `-Male`.
 
-**Style matched to the official localisation:** the letter «ё» removed, «коммандер» replaced with «капитан», names fixed (Хакет, Ариа, Гуэрта, «Синие светила»). Mixed Cyrillic/Latin typos fixed.
+**Style matched to the official localisation:** «коммандер» replaced with «капитан», names fixed (Хакет, Ариа, Гуэрта, «Синие светила»).
 
-**Impersonal wording.** Interface, settings screens, journal and codex no longer address the player by gender.
 
 Covers Expanded Galaxy Mod 1.0.6, Project Variety 0.7, Spectre Expansion Mod 1.2.1, LE3 Community Patch 1.7.9, Appearance Modification Menu 2.2, Apartment Additions 1.0 and five Shepard hairstyle mods.
 

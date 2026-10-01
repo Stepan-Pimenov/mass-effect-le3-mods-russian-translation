@@ -44,9 +44,9 @@ The `Hairstyles` component covers five mods:
 | Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
 | Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
 
-**Style.** The text follows the official localisation of the trilogy: the letter «ё» is not used, Commander Shepard is «капитан Шепард», and names are checked against the game. Interface text, settings screens, journal entries and codex entries are worded impersonally and never address the player by gender.
+**Style.** The text follows the official localisation of the trilogy: Commander Shepard is «капитан Шепард», and names are checked against the game.
 
-**Male and female Shepard.** Letters and lines addressed to Shepard need grammatical gender in Russian, so the translation is built in two variants. The installer has a **Shepard: female / male** switch (female by default). 66 strings differ; everything else is identical.
+**Male and female Shepard.** Letters and lines addressed to Shepard need grammatical gender in Russian, so the translation is built in two variants. The installer has a **Shepard: female / male** switch (female by default).
 
 **Deliberately left in English:** the mod names themselves, credits with author names, and song titles in the music player.
 
@@ -56,17 +56,35 @@ The `Hairstyles` component covers five mods:
 
 ## Installation
 
-### Option 1 — the GUI installer (recommended)
+### The simple way
 
-1. Download `ME3LE-Russian-Mods-<version>-full.zip` from the [releases page](../../releases) and extract it anywhere.
-2. Run **`ME3LE-Русификатор-модов.exe`** (the interface has a Russian/English switch in the top-right corner).
-3. The program locates the game, lists the components as checkboxes and installs only the ticked ones. The same window holds the **Shepard: female / male** switch and an uninstall button.
+**1. Download one file.** On the [releases page](../../releases), under **Assets**, pick the file with **full** in its name — `ME3LE-Russian-Mods-v1.1-full.zip`. It is the largest one in the list. The other files are only for people who want the translation for a single specific mod.
 
-Components whose mod is not installed are marked unavailable, so nothing unnecessary gets copied. Administrator rights are not required unless the game sits in `Program Files`.
+**2. Extract it.** Right-click the downloaded archive, choose **Extract All…**, then **Extract**. Anywhere is fine. Do not run the program from inside the archive — it will not find its own files.
 
-A `*_RUS.tlk.bak` backup is made before each file is replaced; the **Uninstall** button restores from it.
+**3. Open the extracted folder** and double-click **`ME3LE-Русификатор-модов.exe`**. The window has a Russian/English switch in the top-right corner.
 
-### Option 2 — manual copy
+If Windows shows a blue "Windows protected your PC" screen, click **More info**, then **Run anyway**. Windows says this about any program without a paid signing certificate.
+
+**4. Check the game folder.** The top field, **"Game folder:"**, is filled in automatically. If it is empty, click **Browse…** and pick the `Mass Effect Legendary Edition` folder — the one that contains the `Game` folder.
+
+**5. Look at the "What to translate:" list.** Everything is ticked already. Greyed-out rows marked "mod not installed" are mods you do not have, which is fine.
+
+**6. Pick Shepard's gender** with the **Shepard: female / male** switch. Female is the default. It only affects lines addressed to Shepard in letters and dialogue.
+
+**7. Click "Install"** and wait for the "Done" line. Close the window.
+
+**8. The game must be set to Russian**, otherwise the translation will not show up.
+
+That's it.
+
+**To remove the translation**, run the same program and click **"Uninstall"** — the mods' English text comes back. A backup of every English file is made before it is replaced, so you can always roll back.
+
+**If you reinstall a mod** through a mod manager, it puts its English file back. Just run the program again.
+
+**Install the translation after all other mods**, not before.
+
+### Manual copy
 
 The archive contains a `dist/` folder that already mirrors the game's layout. Copy the contents of the component you want, overwriting, into
 
@@ -78,9 +96,9 @@ For EGM, for example, `DLC_MOD_EGM_RUS.tlk` has to end up in `DLC\DLC_MOD_EGM\Co
 
 Next to every file there is a matching `.male.tlk` — the male Shepard variant. To install it by hand, copy that one and drop `.male` from the name.
 
-Per-component archives named `ME3LE-Russian-EGM-<version>.zip` are also attached to each release; their contents go straight into the `DLC` folder.
+Per-component archives named `ME3LE-Russian-EGM-v1.1.zip` are also attached to each release; their contents go straight into the `DLC` folder.
 
-### Option 3 — command line
+### Command line
 
 A PowerShell version of the installer is included for scripted setups:
 
