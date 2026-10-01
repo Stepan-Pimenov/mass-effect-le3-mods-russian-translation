@@ -208,7 +208,9 @@ python tools/build_dlc_ref.py    # LE3 DLC
 
 ## Feedback
 
-Mistakes and typos can be reported in [Issues](../../issues) — please name the mod and quote the text (or attach a screenshot). Pull requests are welcome too: edit the relevant file in `translation/` and the translation rebuilds from it.
+Mistakes and typos can be reported in [Issues](../../issues) — please name the mod and quote the text (or attach a screenshot). Feedback, suggestions and requests for other mods are welcome there as well.
+
+The translation and the code, however, are **maintained by the author alone.** Pull requests and other outside changes are not accepted — deliberately, so that nothing unexpected ends up in files that people download and copy into their game. Report the text and it will be fixed in the next version. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 The translation was produced without checking every line in-game, so some strings may still be too long for their UI slot or read awkwardly.
 
