@@ -24,12 +24,12 @@ The translation matches the official Russian localisation of the trilogy. Every 
 
 | Component | Mod | Mod version | Strings |
 |---|---|---|---:|
-| `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squadmate Pack | 1.0.6 | 2,841 |
-| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ the shared `DLC_Shared` file) | 0.7 | 2,974 |
-| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 1,412 |
-| `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 169 |
-| `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 2.2 | 161 |
-| `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
+| `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/422) + Squadmate Pack | 1.0.6 | 2,841 |
+| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/1481) (+ the shared `DLC_Shared` file) | 0.7 | 2,974 |
+| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/15) | 1.2.1 | 1,412 |
+| `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/13) | 1.7.9 | 169 |
+| `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/694) | 2.2 | 161 |
+| `ApartmentAdditions` | [Apartment Additions](https://www.nexusmods.com/masseffectlegendaryedition/mods/1598) | 1.0 | 53 |
 | `Hairstyles` | Shepard hairstyle mods (five of them, listed below) | — | 137 |
 
 Roughly **7,750 strings, about 1.8 million characters**: codex entries, battle reports, terminal e-mails, descriptions of weapons, armour, vehicles and squadmates, every mod settings screen, the Cerberus Daily News feed, and hairstyle and outfit names.
@@ -38,11 +38,11 @@ The `Hairstyles` component covers five mods:
 
 | Mod | Version |
 |---|---|
-| More Hair for Femshep (ME3LE) | 1.1 |
-| Morning's Hairstyles for FemShep LE3 | 1.4.4 |
-| Morning's Hairstyles for FemShep LE3 PT2 | 1.3.1 |
-| Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
-| Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
+| [More Hair for Femshep (ME3LE)](https://www.nexusmods.com/masseffectlegendaryedition/mods/493) | 1.1 |
+| [Morning's Hairstyles for FemShep LE3](https://www.nexusmods.com/masseffectlegendaryedition/mods/726) | 1.4.4 |
+| [Morning's Hairstyles for FemShep LE3 PT2](https://www.nexusmods.com/masseffectlegendaryedition/mods/1075) | 1.3.1 |
+| [Morning's Hairstyles for Femshep LE3 PT3](https://www.nexusmods.com/masseffectlegendaryedition/mods/1451) | 1.3.3 |
+| [Morning's Versatile Hairstyles for Femshep LE3](https://www.nexusmods.com/masseffectlegendaryedition/mods/1867) | 1.0.3 |
 
 **Style.** The text follows the official localisation of the trilogy: Commander Shepard is «капитан Шепард», and names are checked against the game.
 
