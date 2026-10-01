@@ -26,13 +26,13 @@
 |---|---|---|---:|
 | `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squadmate Pack | 1.0.6 | 2 841 |
 | `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ общий файл `DLC_Shared`) | 0.7 | 2 974 |
-| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 919 |
+| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 1 412 |
 | `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 169 |
 | `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 2.2 | 161 |
 | `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
 | `Hairstyles` | Набор модов на причёски Шепард (5 штук, список ниже) | — | 137 |
 
-Всего **около 7 200 строк, примерно 1,4 млн знаков**: кодекс, сводки боёв, письма на терминал, описания оружия, брони, машин и напарников, все окна настроек модов, новости «Ежедневника Цербера», названия причёсок и одежды.
+Всего **около 7 750 строк, примерно 1,8 млн знаков**: кодекс, сводки боёв, письма на терминал, описания оружия, брони, машин и напарников, все окна настроек модов, новости «Ежедневника Цербера», названия причёсок и одежды.
 
 Компонент `Hairstyles` собран из пяти модов:
 
@@ -44,7 +44,9 @@
 | Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
 | Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
 
-**Стиль.** Текст выдержан под официальную локализацию трилогии: буква «ё» не используется, Commander Shepard — «капитан Шепард», имена и названия сверены с игрой. В текстах интерфейса, журнала заданий и кодекса нет обращений к игроку по полу, поэтому они одинаково читаются и за мужского, и за женского Шепард.
+**Стиль.** Текст выдержан под официальную локализацию трилогии: буква «ё» не используется, Commander Shepard — «капитан Шепард», имена и названия сверены с игрой. Интерфейс, окна настроек, журнал заданий и кодекс написаны безлично и не обращаются к игроку по полу.
+
+**Мужской и женский Шепард.** Письма и реплики, обращённые к Шепард, по-русски требуют рода, поэтому перевод собирается в двух вариантах. Нужный выбирается в установщике переключателем **Шепард: женский / мужской**; по умолчанию женский. Различаются 66 строк, всё остальное одинаково.
 
 **Намеренно оставлено по-английски:** названия самих модов, титры с именами авторов и названия песен в плеере.
 
@@ -58,7 +60,7 @@
 
 1. Со [страницы релизов](../../releases) скачивается архив `ME3LE-Russian-Mods-<версия>-full.zip` и распаковывается в любую папку.
 2. Запускается **`ME3LE-Русификатор-модов.exe`**.
-3. Программа сама находит игру, показывает список компонентов с галочками и ставит только отмеченные. Там же есть кнопка отката.
+3. Программа сама находит игру, показывает список компонентов с галочками и ставит только отмеченные. Там же выбирается вариант перевода — **Шепард: женский / мужской** — и находится кнопка отката.
 
 Компоненты, для которых соответствующий мод не установлен, отмечаются как недоступные — лишнего не поставится. Права администратора не нужны, если игра лежит не в `Program Files`.
 
@@ -74,6 +76,8 @@
 
 Например, для EGM файл `DLC_MOD_EGM_RUS.tlk` должен оказаться в `DLC\DLC_MOD_EGM\CookedPCConsole\`.
 
+Рядом с каждым файлом лежит такой же с `.male.tlk` — это вариант под мужского Шепарда. Чтобы поставить его вручную, нужно скопировать именно его и убрать из имени `.male`.
+
 Для отдельных компонентов на странице релизов лежат небольшие архивы вида `ME3LE-Russian-EGM-<версия>.zip` — их содержимое распаковывается прямо в папку `DLC`.
 
 ### Способ 3 — из командной строки
@@ -82,11 +86,12 @@
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1 -Components EGM,Spectre -Silent
+powershell -ExecutionPolicy Bypass -File install.ps1 -Components all -Male -Silent
 powershell -ExecutionPolicy Bypass -File install.ps1 -GamePath "D:\Games\Mass Effect Legendary Edition"
 powershell -ExecutionPolicy Bypass -File uninstall.ps1
 ```
 
-Без параметров `install.ps1` работает в диалоговом режиме. Ключ `-English` переключает язык вывода.
+Без параметров `install.ps1` работает в диалоговом режиме. Ключ `-English` переключает язык вывода, `-Male` ставит вариант под мужского Шепарда.
 
 ---
 
@@ -96,11 +101,11 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 
 | Файл | Кладётся в | Размер | Строк |
 |---|---|---:|---:|
-| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 392 КБ | 2 840 |
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 391 КБ | 2 840 |
 | `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 КБ | 1 |
 | `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 КБ | 1 624 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 КБ | 1 350 |
-| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 360 КБ | 919 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 311 КБ | 1 412 |
 | `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 КБ | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 КБ | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 КБ | 53 |
@@ -157,6 +162,8 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 ```bash
 python tools/build.py            # собрать .tlk в build/
 python tools/build.py --install  # собрать и сразу положить в игру
+python tools/mkmale.py           # собрать правки под мужского Шепарда в translation_male/
+python tools/build.py --male     # собрать мужской вариант в build_male/
 python tools/mkrelease.py        # собрать архивы для релиза
 ```
 

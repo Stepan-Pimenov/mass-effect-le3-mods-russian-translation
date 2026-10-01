@@ -11,6 +11,7 @@ from tlkwrite import write_tlk
 ROOT = os.path.dirname(HERE)
 SRC = os.path.join(ROOT, 'source')
 TR = os.path.join(ROOT, 'translation')
+TRM = os.path.join(ROOT, 'translation_male')
 BUILD = os.path.join(ROOT, 'build')
 BACKUP = os.path.join(ROOT, 'backup_original')
 # Путь к папке DLC третьей части. Можно переопределить переменной окружения:
@@ -36,6 +37,11 @@ os.makedirs(BACKUP, exist_ok=True)
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 install = '--install' in sys.argv
+# --male собирает вариант с мужским Шепардом в build_male/
+male_variant = '--male' in sys.argv
+if male_variant:
+    BUILD = os.path.join(ROOT, 'build_male')
+    os.makedirs(BUILD, exist_ok=True)
 
 def has_translation(stem):
     for f in os.listdir(TR):
@@ -62,6 +68,11 @@ for stem in stems:
                        if not k.startswith('_')})
     if os.path.exists(tp):
         tr.update({k: v for k, v in json.load(open(tp, encoding='utf-8')).items() if not k.startswith('_')})
+    if male_variant:
+        mp = os.path.join(TRM, stem + '.json')
+        if os.path.exists(mp):
+            tr.update({k: v for k, v in json.load(open(mp, encoding='utf-8')).items()
+                       if not k.startswith('_')})
 
     game_int = os.path.join(DLC, src['mod'], 'CookedPCConsole', stem + '_INT.tlk')
     r = read_tlk(game_int, msb_first=False)

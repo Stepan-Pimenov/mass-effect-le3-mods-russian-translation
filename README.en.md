@@ -26,13 +26,13 @@ The translation matches the official Russian localisation of the trilogy. Every 
 |---|---|---|---:|
 | `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/136) + Squadmate Pack | 1.0.6 | 2,841 |
 | `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/819) (+ the shared `DLC_Shared` file) | 0.7 | 2,974 |
-| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 919 |
+| `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/1213) | 1.2.1 | 1,412 |
 | `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/9) | 1.7.9 | 169 |
 | `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/1130) | 2.2 | 161 |
 | `ApartmentAdditions` | Apartment Additions | 1.0 | 53 |
 | `Hairstyles` | Shepard hairstyle mods (five of them, listed below) | — | 137 |
 
-Roughly **7,200 strings, about 1.4 million characters**: codex entries, battle reports, terminal e-mails, descriptions of weapons, armour, vehicles and squadmates, every mod settings screen, the Cerberus Daily News feed, and hairstyle and outfit names.
+Roughly **7,750 strings, about 1.8 million characters**: codex entries, battle reports, terminal e-mails, descriptions of weapons, armour, vehicles and squadmates, every mod settings screen, the Cerberus Daily News feed, and hairstyle and outfit names.
 
 The `Hairstyles` component covers five mods:
 
@@ -44,7 +44,9 @@ The `Hairstyles` component covers five mods:
 | Morning's Hairstyles for Femshep LE3 PT3 | 1.3.3 |
 | Morning's Versatile Hairstyles for Femshep LE3 | 1.0.3 |
 
-**Style.** The text follows the official localisation of the trilogy: the letter «ё» is not used, Commander Shepard is «капитан Шепард», and names are checked against the game. Interface text, journal entries and codex entries never address the player by gender, so they read the same for a male and a female Shepard.
+**Style.** The text follows the official localisation of the trilogy: the letter «ё» is not used, Commander Shepard is «капитан Шепард», and names are checked against the game. Interface text, settings screens, journal entries and codex entries are worded impersonally and never address the player by gender.
+
+**Male and female Shepard.** Letters and lines addressed to Shepard need grammatical gender in Russian, so the translation is built in two variants. The installer has a **Shepard: female / male** switch (female by default). 66 strings differ; everything else is identical.
 
 **Deliberately left in English:** the mod names themselves, credits with author names, and song titles in the music player.
 
@@ -58,7 +60,7 @@ The `Hairstyles` component covers five mods:
 
 1. Download `ME3LE-Russian-Mods-<version>-full.zip` from the [releases page](../../releases) and extract it anywhere.
 2. Run **`ME3LE-Русификатор-модов.exe`** (the interface has a Russian/English switch in the top-right corner).
-3. The program locates the game, lists the components as checkboxes and installs only the ticked ones. The same window has an uninstall button.
+3. The program locates the game, lists the components as checkboxes and installs only the ticked ones. The same window holds the **Shepard: female / male** switch and an uninstall button.
 
 Components whose mod is not installed are marked unavailable, so nothing unnecessary gets copied. Administrator rights are not required unless the game sits in `Program Files`.
 
@@ -74,6 +76,8 @@ The archive contains a `dist/` folder that already mirrors the game's layout. Co
 
 For EGM, for example, `DLC_MOD_EGM_RUS.tlk` has to end up in `DLC\DLC_MOD_EGM\CookedPCConsole\`.
 
+Next to every file there is a matching `.male.tlk` — the male Shepard variant. To install it by hand, copy that one and drop `.male` from the name.
+
 Per-component archives named `ME3LE-Russian-EGM-<version>.zip` are also attached to each release; their contents go straight into the `DLC` folder.
 
 ### Option 3 — command line
@@ -82,11 +86,12 @@ A PowerShell version of the installer is included for scripted setups:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File install.ps1 -Components EGM,Spectre -Silent -English
+powershell -ExecutionPolicy Bypass -File install.ps1 -Components all -Male -Silent -English
 powershell -ExecutionPolicy Bypass -File install.ps1 -GamePath "D:\Games\Mass Effect Legendary Edition" -English
 powershell -ExecutionPolicy Bypass -File uninstall.ps1 -English
 ```
 
-Without parameters `install.ps1` runs interactively. `-English` switches the output language.
+Without parameters `install.ps1` runs interactively. `-English` switches the output language, `-Male` installs the male Shepard variant.
 
 ---
 
@@ -96,11 +101,11 @@ Without parameters `install.ps1` runs interactively. `-English` switches the out
 
 | File | Goes into | Size | Strings |
 |---|---|---:|---:|
-| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 392 KB | 2,840 |
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 391 KB | 2,840 |
 | `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 KB | 1 |
 | `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 KB | 1,624 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 KB | 1,350 |
-| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 360 KB | 919 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 311 KB | 1,412 |
 | `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 KB | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 KB | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 KB | 53 |
@@ -157,6 +162,8 @@ The translation itself lives in `translation/` as JSON files of the form `"strin
 ```bash
 python tools/build.py            # build .tlk files into build/
 python tools/build.py --install  # build and copy straight into the game
+python tools/mkmale.py           # generate the male Shepard overrides into translation_male/
+python tools/build.py --male     # build the male variant into build_male/
 python tools/mkrelease.py        # build the release archives
 ```
 

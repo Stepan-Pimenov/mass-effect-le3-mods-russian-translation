@@ -14,7 +14,9 @@ param(
     # Не задавать вопросов (для скриптов и CI).
     [switch] $Silent,
     # Английский интерфейс установщика.
-    [switch] $English
+    [switch] $English,
+    # Вариант перевода под мужского Шепарда.
+    [switch] $Male
 )
 
 $ErrorActionPreference = 'Stop'
@@ -38,6 +40,8 @@ $ru = @{
     backup      = 'резервная копия'
     done        = 'Готово. Установлено компонентов:'
     donePost    = 'Запусти игру с русским языком — текст модов будет по-русски.'
+    variantF    = 'Вариант перевода: женский Шепард.'
+    variantM    = 'Вариант перевода: мужской Шепард.'
     undo        = 'Чтобы откатить, запусти uninstall.ps1 или удали файлы *_RUS.tlk из папок модов.'
     err         = 'ОШИБКА:'
 }
@@ -57,6 +61,8 @@ $en = @{
     backup      = 'backup'
     done        = 'Done. Components installed:'
     donePost    = 'Start the game with Russian language selected - mod text will be in Russian.'
+    variantF    = 'Translation variant: female Shepard.'
+    variantM    = 'Translation variant: male Shepard.'
     undo        = 'To revert, run uninstall.ps1 or delete the *_RUS.tlk files from the mod folders.'
     err         = 'ERROR:'
 }
@@ -232,7 +238,12 @@ try {
                     Write-Host ("      {0}: {1}" -f $L.backup, (Split-Path -Leaf $bak)) -ForegroundColor DarkGray
                 }
             }
-            Copy-Item $file.FullName $target -Force
+            $source = $file.FullName
+            if ($Male) {
+                $maleSource = $source -replace '_RUS\.tlk$', '_RUS.male.tlk'
+                if (Test-Path $maleSource) { $source = $maleSource }
+            }
+            Copy-Item $source $target -Force
             Write-Host ("  + " + $rel) -ForegroundColor Green
             $any = $true
         }
@@ -241,6 +252,8 @@ try {
 
     Write-Host ''
     Write-Host "$($L.done) $installed" -ForegroundColor Green
+    $variantNote = if ($Male) { $L.variantM } else { $L.variantF }
+    Write-Host $variantNote
     Write-Host $L.donePost
     Write-Host $L.undo -ForegroundColor DarkGray
 } catch {

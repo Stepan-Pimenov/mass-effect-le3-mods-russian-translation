@@ -24,3 +24,6 @@ __pycache__/
 
 # Архивы релиза (собираются tools/mkrelease.py)
 /release/
+
+# Мужской вариант сборки (собирается tools/build.py --male)
+/build_male/

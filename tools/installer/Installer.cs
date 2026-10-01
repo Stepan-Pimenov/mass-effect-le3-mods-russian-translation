@@ -52,6 +52,11 @@ namespace Le3RuInstaller
         public static string Error { get { return P("Ошибка: ", "Error: "); } }
         public static string ConfirmUninstall { get { return P("Убрать перевод у отмеченных модов и вернуть их английский текст?",
                                                                "Remove the translation from the selected mods and restore their English text?"); } }
+        public static string ShepardLabel { get { return P("Шепард:", "Shepard:"); } }
+        public static string ShepardF { get { return P("женский", "female"); } }
+        public static string ShepardM { get { return P("мужской", "male"); } }
+        public static string VariantF { get { return P("Вариант перевода: женский Шепард.", "Translation variant: female Shepard."); } }
+        public static string VariantM { get { return P("Вариант перевода: мужской Шепард.", "Translation variant: male Shepard."); } }
     }
 
     // ------------------------------------------------------------- компоненты
@@ -195,7 +200,8 @@ namespace Le3RuInstaller
                 c.Present = c.DlcFolders.Any(f => Directory.Exists(Path.Combine(dlc, f)));
         }
 
-        public static int Install(IEnumerable<Component> comps, string distRoot, string gameRoot, Action<string> log)
+        public static int Install(IEnumerable<Component> comps, string distRoot, string gameRoot,
+                                  bool male, Action<string> log)
         {
             string dlc = DlcRoot(gameRoot);
             int n = 0;
@@ -214,7 +220,13 @@ namespace Le3RuInstaller
                         File.Copy(target, bak);
                         log("      " + Path.GetFileName(bak) + " — " + Str.Backup);
                     }
-                    File.Copy(Path.Combine(compDir, rel), target, true);
+                    string source = Path.Combine(compDir, rel);
+                    if (male)
+                    {
+                        string maleSrc = source.Substring(0, source.Length - 4) + ".male.tlk";
+                        if (File.Exists(maleSrc)) source = maleSrc;
+                    }
+                    File.Copy(source, target, true);
                     log("  + " + rel);
                     n++;
                 }
@@ -261,6 +273,8 @@ namespace Le3RuInstaller
         Button _browse, _install, _uninstall, _close;
         CheckedListBox _list;
         CheckBox _all;
+        Label _lblShep;
+        RadioButton _shepF, _shepM;
         TextBox _log;
 
         public MainForm(string distRoot)
@@ -302,6 +316,10 @@ namespace Le3RuInstaller
                     if (_comps[i].Present) _list.SetItemChecked(i, _all.Checked);
             };
 
+            _lblShep = new Label { Left = 286, Top = 263, AutoSize = true };
+            _shepF = new RadioButton { Left = 352, Top = 261, Width = 100, Checked = true };
+            _shepM = new RadioButton { Left = 456, Top = 261, Width = 100 };
+
             _install = new Button { Left = 14, Top = 292, Width = 150, Height = 32 };
             _install.Click += (s, e) => DoInstall();
             _uninstall = new Button { Left = 174, Top = 292, Width = 150, Height = 32 };
@@ -317,7 +335,8 @@ namespace Le3RuInstaller
             };
 
             Controls.AddRange(new Control[] { _lang, _lblGame, _game, _browse, _lblComp, _list,
-                                              _all, _install, _uninstall, _close, _log });
+                                              _all, _lblShep, _shepF, _shepM,
+                                              _install, _uninstall, _close, _log });
 
             Retext();
 
@@ -340,6 +359,9 @@ namespace Le3RuInstaller
             _browse.Text = Str.Browse;
             _lblComp.Text = Str.Components;
             _all.Text = Str.SelectAll;
+            _lblShep.Text = Str.ShepardLabel;
+            _shepF.Text = Str.ShepardF;
+            _shepM.Text = Str.ShepardM;
             _install.Text = Str.Install;
             _uninstall.Text = Str.Uninstall;
             _close.Text = Str.Close;
@@ -410,9 +432,10 @@ namespace Le3RuInstaller
             try
             {
                 _log.Clear();
-                int n = Engine.Install(Checked(), _distRoot, _game.Text, Log);
+                int n = Engine.Install(Checked(), _distRoot, _game.Text, _shepM.Checked, Log);
                 Log("");
                 Log(string.Format(Str.DoneInstall, n));
+                Log(_shepM.Checked ? Str.VariantM : Str.VariantF);
                 Log(Str.AfterInstall);
             }
             catch (Exception ex)
