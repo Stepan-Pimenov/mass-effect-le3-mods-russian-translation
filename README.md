@@ -25,7 +25,7 @@
 | Компонент | Мод | Версия мода | Строк |
 |---|---|---|---:|
 | `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/422) + Squadmate Pack | 1.0.6 | 2 841 |
-| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/1481) (+ общий файл `DLC_Shared`) | 0.7 | 2 974 |
+| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/1481) (+ общий файл `DLC_Shared`) | 0.7 | 2 976 |
 | `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/15) | 1.2.1 | 1 412 |
 | `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/13) | 1.7.9 | 169 |
 | `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/694) | 2.2 | 161 |
@@ -119,12 +119,12 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 
 | Файл | Кладётся в | Размер | Строк |
 |---|---|---:|---:|
-| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 391 КБ | 2 840 |
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 392 КБ | 2 840 |
 | `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 КБ | 1 |
-| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 КБ | 1 624 |
+| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 КБ | 1 626 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 КБ | 1 350 |
-| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 311 КБ | 1 412 |
-| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 КБ | 169 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 312 КБ | 1 412 |
+| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 34 КБ | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 КБ | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 КБ | 53 |
 | 5 файлов причёсок | соответствующие папки модов | < 4 КБ | 137 |
@@ -178,11 +178,20 @@ powershell -ExecutionPolicy Bypass -File uninstall.ps1
 Сам перевод лежит в `translation/` — это JSON-файлы вида `"номер строки": "русский текст"`. Правки вносятся прямо там, после чего перевод пересобирается:
 
 ```bash
+python tools/check.py --build    # проверить перевод и сборку
 python tools/build.py            # собрать .tlk в build/
 python tools/build.py --install  # собрать и сразу положить в игру
 python tools/mkmale.py           # собрать правки под мужского Шепарда в translation_male/
 python tools/build.py --male     # собрать мужской вариант в build_male/
 python tools/mkrelease.py        # собрать архивы для релиза
+```
+
+Перевод нового мода собирается тремя командами:
+
+```bash
+python tools/dump.py             # выгрузить текст мода из игры в source/
+python tools/prep.py <мод>       # разложить непереведённое по кускам в work/<мод>/
+python tools/assemble.py <мод>   # собрать переводы обратно в translation/
 ```
 
 Путь к игре берётся из переменной окружения `ME3LE_PATH` (корень игры) или `ME3LE_DLC`; если их нет — из значения по умолчанию в начале `tools/build.py`.

@@ -25,7 +25,7 @@ The translation matches the official Russian localisation of the trilogy. Every 
 | Component | Mod | Mod version | Strings |
 |---|---|---|---:|
 | `EGM` | [Expanded Galaxy Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/422) + Squadmate Pack | 1.0.6 | 2,841 |
-| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/1481) (+ the shared `DLC_Shared` file) | 0.7 | 2,974 |
+| `ProjectVariety` | [Project Variety](https://www.nexusmods.com/masseffectlegendaryedition/mods/1481) (+ the shared `DLC_Shared` file) | 0.7 | 2,976 |
 | `Spectre` | [Spectre Expansion Mod](https://www.nexusmods.com/masseffectlegendaryedition/mods/15) | 1.2.1 | 1,412 |
 | `CommunityPatch` | [LE3 Community Patch](https://www.nexusmods.com/masseffectlegendaryedition/mods/13) | 1.7.9 | 169 |
 | `AppearanceModMenu` | [Appearance Modification Menu](https://www.nexusmods.com/masseffectlegendaryedition/mods/694) | 2.2 | 161 |
@@ -119,12 +119,12 @@ Without parameters `install.ps1` runs interactively. `-English` switches the out
 
 | File | Goes into | Size | Strings |
 |---|---|---:|---:|
-| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 391 KB | 2,840 |
+| `DLC_MOD_EGM_RUS.tlk` | `DLC_MOD_EGM\CookedPCConsole\` | 392 KB | 2,840 |
 | `DLC_MOD_EGM_Squad_RUS.tlk` | `DLC_MOD_EGM_Squad\CookedPCConsole\` | < 1 KB | 1 |
-| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 KB | 1,624 |
+| `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 KB | 1,626 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 KB | 1,350 |
-| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 311 KB | 1,412 |
-| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 KB | 169 |
+| `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 312 KB | 1,412 |
+| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 34 KB | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 KB | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 KB | 53 |
 | 5 hairstyle files | the corresponding mod folders | < 4 KB | 137 |
@@ -178,11 +178,20 @@ The translation itself is just text files — the game needs no dependencies for
 The translation itself lives in `translation/` as JSON files of the form `"string id": "Russian text"`. Edits go there, then the translation is rebuilt:
 
 ```bash
+python tools/check.py --build    # check the translation and the build
 python tools/build.py            # build .tlk files into build/
 python tools/build.py --install  # build and copy straight into the game
 python tools/mkmale.py           # generate the male Shepard overrides into translation_male/
 python tools/build.py --male     # build the male variant into build_male/
 python tools/mkrelease.py        # build the release archives
+```
+
+Translating a new mod takes three commands:
+
+```bash
+python tools/dump.py             # dump the mod's text from the game into source/
+python tools/prep.py <mod>       # split the untranslated strings into work/<mod>/
+python tools/assemble.py <mod>   # merge the translations back into translation/
 ```
 
 The game path comes from the `ME3LE_PATH` (game root) or `ME3LE_DLC` environment variable; without them it falls back to the default at the top of `tools/build.py`.
