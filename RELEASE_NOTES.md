@@ -2,6 +2,32 @@
 
 Переведено около **7 750 строк (~1,8 млн знаков)**: кодекс, сводки боёв, письма на терминал, описания оружия, брони, машин и напарников, все окна настроек модов, новости «Ежедневника Цербера», названия причёсок и одежды. Терминология сверена с официальным русским переводом трилогии — из LE1, LE2, LE3 и всех DLC извлечён словарь примерно на 100 000 пар «оригинал → официальный русский».
 
+### Что нового в 1.2.1
+
+**Сплошная вычитка окон настроек.** Описания настроек проверены по одному и приведены к единому виду: они отвечают на вопрос, что делает мод, а не что сделать игроку.
+
+- Подписи «ВКЛЮЧЕНО / ВЫКЛЮЧЕНО» в Community Patch приведены к общему для всей сборки виду «ВКЛ / ВЫКЛ» — 38 строк.
+- «Дает послу свой наряд» заменено на «особый наряд»: в оригинале речь об отдельном наряде, а не о его собственном — 46 строк.
+- Советники приведены к игровым названиям: «советник азари», «советник турианцев», «советник саларианцев».
+- Задания в журнале переписаны по образцу игры, без обращений: «Отправиться на Тессию и провести разведку» вместо «Отправляйся… проведи».
+- В «Дополнениях квартиры» описания говорят, что делает настройка: «Ставит на стол портрет партнера» вместо «Включить или выключить портрет».
+
+**Исправлены ошибки самих модов, из-за которых игра показывала неправду:**
+
+- У настройки наряда Рива оба состояния были подписаны «включено».
+- У настройки наряда лейтенанта Курина состояния были перепутаны местами.
+- Подпись «Майкл и Ребекка Петровские» потеряла слово «Внешность», и пара настроек выглядела разной.
+- Подпись «Без разговора об эмблемах» не совпадала с описанием и заменена на «Без объявлений на Цитадели».
+
+**Непонятные настройки стали понятными:**
+
+- «Танцовщицы клуба» прямо говорит, что выбирается: женщины, мужчины или вперемешку.
+- «Кадры со спины» превратились в «Кадры со спины Миранды», а заголовок раздела объясняет, что это возврат вырезанного из игры.
+- «Сцены романа» стали «Настройками сцен романа».
+- «Стыковка на Цитадели: дверь кабины» — теперь «дверь рубки», как в описании.
+
+**Пунктуация и грамматика:** восстановлена потерянная кавычка в досье на Кая Лена, убраны лишние кавычки в двух новостных заметках, выправлено «Аттический Траверс».
+
 ### Что нового в 1.2
 
 Версия целиком про вычитку: новых модов не добавилось, зато выправлено всё, что нашлось при сплошной проверке.
@@ -36,7 +62,7 @@
 
 ### Установка
 
-Ниже, в разделе **Assets**, нужно скачать один файл — **`ME3LE-Russian-Mods-v1.2-full.zip`** (тот, в имени которого есть `full`). Распаковать его в любую папку и запустить **`ME3LE-Русификатор-модов.exe`**. Программа сама находит игру и показывает список модов с галочками; там же выбирается пол Шепард. Остаётся нажать «Установить». Откат — кнопкой «Удалить перевод» в том же окне.
+Ниже, в разделе **Assets**, нужно скачать один файл — **`ME3LE-Russian-Mods-v1.2.1-full.zip`** (тот, в имени которого есть `full`). Распаковать его в любую папку и запустить **`ME3LE-Русификатор-модов.exe`**. Программа сама находит игру и показывает список модов с галочками; там же выбирается пол Шепард. Остаётся нажать «Установить». Откат — кнопкой «Удалить перевод» в том же окне.
 
 Подробная пошаговая инструкция — в [README](https://github.com/Stepan-Pimenov/mass-effect-le3-mods-russian-translation#установка).
 
@@ -58,6 +84,10 @@ A Russian translation of the text that Mass Effect 3 Legendary Edition mods add 
 
 About **7,750 strings (~1.8M characters)**: codex entries, battle reports, terminal e-mails, weapon, armour, vehicle and squadmate descriptions, every mod settings screen, the Cerberus Daily News feed, hairstyle and outfit names.
 
+### What's new in 1.2.1
+
+Every settings screen was proofread line by line. Descriptions now answer what the mod does rather than telling the player what to do: the Community Patch labels match the rest of the pack, the journal objectives follow the game's own wording, and the Apartment Additions descriptions explain the setting instead of instructing. Mistakes in the mods themselves are fixed too — one option showed "enabled" for both states, another had its two states swapped, and two labels did not match their descriptions. Unclear options were made clear: "Club Dancers" now says what is being chosen, and the Miranda camera options say whose shots they restore.
+
 ### What's new in 1.2
 
 A proofreading release — no new mods, but everything a full pass turned up has been fixed.
@@ -74,6 +104,6 @@ A proofreading release — no new mods, but everything a full pass turned up has
 
 **Small things:** a Latin letter inside a Russian word, a space before a colon, stray double spaces in 25 strings, blank lines made of a single space, trailing line breaks in 72 strings, stray quotes in the credits, and the angle-bracketed addresses restored in Kai Leng's dossier.
 
-**Download one file:** `ME3LE-Russian-Mods-v1.2-full.zip` (the one with `full` in its name). Extract it, run `ME3LE-Русификатор-модов.exe` — the window has an English switch — tick the components, pick Shepard's gender, click Install. Apply after all other mods. Step-by-step guide: [README.en.md](https://github.com/Stepan-Pimenov/mass-effect-le3-mods-russian-translation/blob/main/README.en.md#installation).
+**Download one file:** `ME3LE-Russian-Mods-v1.2.1-full.zip` (the one with `full` in its name). Extract it, run `ME3LE-Русификатор-модов.exe` — the window has an English switch — tick the components, pick Shepard's gender, click Install. Apply after all other mods. Step-by-step guide: [README.en.md](https://github.com/Stepan-Pimenov/mass-effect-le3-mods-russian-translation/blob/main/README.en.md#installation).
 
 Tested on `MassEffect3.exe` 2.0.0.0, mod feature level 137, Windows 11 25H2. The installer needs .NET Framework 4.x (bundled with Windows 10/11).

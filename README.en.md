@@ -124,7 +124,7 @@ Without parameters `install.ps1` runs interactively. `-English` switches the out
 | `DLC_MOD_ProjectVariety_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 334 KB | 1,626 |
 | `DLC_Shared_RUS.tlk` | `DLC_MOD_ProjectVariety\CookedPCConsole\` | 69 KB | 1,350 |
 | `DLC_MOD_Spectre_RUS.tlk` | `DLC_MOD_Spectre\CookedPCConsole\` | 312 KB | 1,412 |
-| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 34 KB | 169 |
+| `DLC_MOD_LE3Patch_RUS.tlk` | `DLC_MOD_LE3Patch\CookedPCConsole\` | 33 KB | 169 |
 | `DLC_MOD_AppearanceModMenu_RUS.tlk` | `DLC_MOD_AppearanceModMenu\CookedPCConsole\` | 4 KB | 161 |
 | `DLC_MOD_ApartmentAdditions_RUS.tlk` | `DLC_MOD_ApartmentAdditions\CookedPCConsole\` | 2 KB | 53 |
 | 5 hairstyle files | the corresponding mod folders | < 4 KB | 137 |
